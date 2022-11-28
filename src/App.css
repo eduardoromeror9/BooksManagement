@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 40rem;
+  margin: 7rem auto 0;
+}
+
+/* Header */
+header {
+  text-align: center;
+}
+
+header nav {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+header nav > a {
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 0.5rem 2rem;
+  color: black;
+  border-radius: .3rem;
+}
+
+header nav > .active {
+  background-color: black;
+  color: white;
+}
+
+/* AddForm */
+.form {
+  margin: 2rem auto;
+  max-width: 20rem;
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.inputField input {
+  border-radius: .3rem;
+  padding: 0.5rem 1rem 0.5rem 0;
+  text-indent: 0.5rem;
+}
+
+.form .btnForm {
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: .3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.form .btnForm:disabled {
+  background-color: #ddd;
+  border: 1px solid #ddd;
+  color: #666;
+  cursor: not-allowed;
+}

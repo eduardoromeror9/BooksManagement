@@ -75,3 +75,46 @@ header nav > .active {
   color: #666;
   cursor: not-allowed;
 }
+
+/* Lista de libros */
+.listBook {
+  margin: 2rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.listBook .noData {
+  text-align: center;
+  grid-column: 1 / span 3;
+  margin-top: 2rem;
+  color: #333;
+}
+
+/* Card */
+.book {
+  background: #ddd;
+  padding: 1rem;
+  border-radius: .3rem;
+}
+
+.book h2 {
+  text-decoration: underline;
+}
+
+.book .bookDetail {
+  line-height: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.book .buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.book .buttons > button {
+  padding: 0.5rem 1rem;
+  border-radius: .3rem;
+  cursor: pointer;
+}

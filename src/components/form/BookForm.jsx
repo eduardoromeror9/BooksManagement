@@ -8,8 +8,8 @@ const BookForm = ( { handleSubmit } ) => {
     autor: '',
     precio: '',
   })
-  console.log(bookState);
 
+  
   const handleChange = (e) => {
     setBookState({
       id: uuidv4(),

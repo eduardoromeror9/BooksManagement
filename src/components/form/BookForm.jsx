@@ -2,17 +2,16 @@ import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 
-const BookForm = ( { handleSubmit } ) => {
+const BookForm = ({ book, handleSubmit }) => {
   const [ bookState, setBookState ] = useState({
-    name: '',
-    autor: '',
-    precio: '',
+    name: book ? book.name : '',
+    autor: book ? book.autor : '',
+    precio: book ? book.precio : '',
   })
 
   
   const handleChange = (e) => {
     setBookState({
-      id: uuidv4(),
       ...bookState,
       [e.target.name]: e.target.value
     })
@@ -21,9 +20,11 @@ const BookForm = ( { handleSubmit } ) => {
   const onSubmit = (e) => {
     e.preventDefault()
     handleSubmit({
+      id: uuidv4(),
       date: new Date(),
       ...bookState
     })
+    setBookState({ name: '', autor: '', precio: '' }) // se limpia el formulario
   }
   
   const renderInputField = (label, placeholder, name) => {
@@ -42,7 +43,7 @@ const BookForm = ( { handleSubmit } ) => {
       { renderInputField('Titulo del Libro', 'Ingresa el nombre del libro...', 'name') }
       { renderInputField('Autor del Libro',  'Ingresa el nombre del autor...', 'autor') }
       { renderInputField('Precio del Libro', 'Ingresa el precio del libro...', 'precio') }
-      <button className="btnForm" type="submit" disabled={ disableSubmit }>Agregar Libro</button>
+      <button className="btnForm" type="submit" disabled={ disableSubmit }>{ book ? 'Actualizar' :  'Submit'}</button>
     </form>
   )
 }

@@ -4,6 +4,7 @@ import AddBook from './components/AddBook'
 import Header from './components/Header'
 import ListBook from './components/ListBook'
 import BookProvider from './context/BookContext'
+import EditBook from './components/EditBook'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ListBook />} />
           <Route path="/add" element={<AddBook />} />
+          <Route path="/edit/:id" element={<EditBook />} />
         </Routes>
       </BookProvider>
 

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const Book = ({ book }) => {
+const Book = ({ book, handleRemoveBook }) => {
 
   const navegacion = useNavigate();
   const { id, name, autor, precio, date } = book;
@@ -15,7 +15,7 @@ const Book = ({ book }) => {
       </div>
       <div className="buttons">
         <button onClick={() => navegacion(`/edit/${id}`)} className="btnForm">Editar</button>
-        <button className="btnForm">Borrar</button>
+        <button onClick={() => handleRemoveBook(id)} className="btnForm">Borrar</button>
       </div>
     </div>
   )
